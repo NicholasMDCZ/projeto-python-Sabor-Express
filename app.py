@@ -1,6 +1,8 @@
 import os
 
-restaurantes = ['Pizza' , 'Hipopotamus']
+restaurantes = [{'nome':'Praça','categoria':'Japonesa', 'ativo':False},
+                {'nome':'Pizza Suprema','categoria':'Italiana', 'ativo':True},
+                {'nome':'Anjinho','categoria':'Cachorro Quente', 'ativo':False}]
 
 def exibir_nome_do_programa():
     print("""
@@ -33,11 +35,11 @@ def exibir_subtitulo(texto):
 
 
 def cadastrar_novo_restaurante():
-        exibir_subtitulo('Cadastro de novos restaurantes')
-        
+        exibir_subtitulo('Cadastro de novos restaurantes')        
         nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
         restaurantes.append(nome_do_restaurante)
         print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
+        
         voltar_ao_menu_principal()        
 
 def listar_restaurantes():
@@ -45,7 +47,10 @@ def listar_restaurantes():
     
 
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo =  restaurante['ativo']
+        print(f' - {nome_restaurante} | {categoria} | {ativo}')
     voltar_ao_menu_principal()
 
 def escolher_opcoes():
