@@ -4,14 +4,10 @@ class Restaurante:
         self.categoria = categoria
         ativo = False
 
-restaurante_praca = Restaurante()
-restaurante_praca.nome = 'Praça'
-restaurante_praca.categoria = 'Italiano'
-restaurante_pizza = Restaurante()
+restaurante_praca = Restaurante('Praça', 'Gourmet')
+restaurante_pizza = Restaurante('Pizza Express', 'Italiano')
 
 restaurantes = [restaurante_praca, restaurante_pizza]
 
-
-
-
-
+print(restaurante_praca)
+print(restaurante_pizza)
